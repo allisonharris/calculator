@@ -20,10 +20,26 @@
 	border-radius: 3px;
 }
 
-/*Clear floats */
-.keys{overflow:hidden;}
+/*Top portion*/
+.top .clear {
+	float: left;
 
-.keys span {
+}
+
+.top .screen {
+	height: 40px;
+	width: 200px;
+
+	float: right;
+
+	bacground: rgba(0,0,0,0.2);
+}
+
+/*Clear floats */
+.keys, .top {overflow:hidden;}
+
+.keys span, .top span.clear {
+
 	float: left;
 
 	width: 66px;
