@@ -24,7 +24,7 @@ html {
 
 	background: linear-gradient(#9dd2ea, #8bceec);
 	border-radius: 3px;
-	box-shadow: 0px 4px #009de4;
+	box-shadow: 0px 4px #009de4, 0px 1opx 15px rgba(0, 0, 0, 0.2);
 }
 
 /*Top portion*/
@@ -62,7 +62,15 @@ html {
 	color: #888;
 	line-height: 36px;
 	text-align: center;
+
+	/*prevent selection of text inside keys*/
+	user-select: none;
 }
 
 /*Remove right margins from operator keys*/
 span.operator {margin-right: 0;}
+
+/*Style different types of keys (operators/evaluate/clear) differently*/
+.jeys span.operator {
+	background: #FFF0F5;
+}
