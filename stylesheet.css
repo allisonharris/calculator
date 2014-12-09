@@ -84,6 +84,26 @@ html {
 	box-shadow: 0px 4px #ff7c87;
 	color: white;
 }
+
+/*Some hover effects*/
+.keys span:hover {
+	background: #9c89f6;
+	box-shadow: 0px 4px #6b54d3;
+	color: white;
+}
+
+.keys span.eval:hover {
+	background: #abb850;
+	box-shadow: 0px 4px #717a33;
+	color: #ffffff;
+}
+
+.top span.clear:hover {
+	background: #f68991;
+	box-shadow: 0px 4px #d3545d;
+	color: white;
+}
+
 /*Style different types of keys (operators/evaluate/clear) differently*/
 .keys span.operator {
 	background: #FFF0F5;
