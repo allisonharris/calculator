@@ -3,6 +3,7 @@
 *{
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 
 	/*Better text styling*/
 	font: bold 14px Arial, sans-serif;
@@ -24,11 +25,11 @@ html {
 
 	background: linear-gradient(#9dd2ea, #8bceec);
 	border-radius: 3px;
-	box-shadow: 0px 4px #009de4, 0px 1opx 15px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*Top portion*/
-.top .clear {
+.top .span.clear {
 	float: left;
 
 }
@@ -42,7 +43,7 @@ html {
 
 	padding: 0 10px;
 
-	bacground: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.2);
 	border-radius: 3px;
 	box-shadow: inset 0px 4px rgba(0,0,0,0.2);
 
@@ -65,6 +66,8 @@ html {
 	position: relative;
 	top: 0;
 
+	cursor: pointer;
+
 	width: 66px;
 	height: 36px;
 
@@ -82,10 +85,11 @@ html {
 	user-select: none;
 
 	/*Smoothing out hover and active states using css3 transitions*/
-		transition: all 02s ease;
+		transition: all 0.2s ease;
 }
 
 /*Remove right margins from operator keys*/
+/*style different type of keys (operators/evaluate/clear) differently*/
 .keys span.operator {
 	background: #FFF0F5;
 	margin-right: 0;
