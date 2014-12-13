@@ -27,7 +27,15 @@ for(var i = 0; i < keys.length; i++) {
 					input.innerHTML = eval(equation);
 				}
 
-			
+			//Basic functionality of the calculator is complete, but there are some problems like
+			//1. No two operators should be added consecutively.
+			//2. The equation shouldn't start from an operator except minus.
+			//3. There should not be more than 1 decimal in a number.
 
+			
+			//if any other key is pressed, just append input
+			else {
+				input.innerHTML += btnVal;
+			}
 	}
 }
