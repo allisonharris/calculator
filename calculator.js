@@ -1,6 +1,7 @@
 //Get all the keys from document
 var keys = document.querySelectorAll('#calculator span');
 var operators = ['+', '-', 'x', '÷'];
+var decimalAdded = false;
 
 //Add onclick event to all the keys and perform operations
 for(var i = 0; i < keys.length; i++) {
@@ -55,6 +56,14 @@ for(var i = 0; i < keys.length; i++) {
 						if(operators.indexOf(lastChar) > -1 && inputVal.length > 1 {
 							//Here, '.' matches any character while $ donotes the end of string, so anything (will be an operator in this case) at the end of string will get replaced by new operator
 								input.innerHTML = inputVal.replace(/.$/, btnVal);
+							}
+						}
+
+					//Now only the decimal problem is left.  I can solve this easily using a flag 'decimalAdded' which I'll set once the decimal is added and prevent more decimals to be added once it's set.  It will be reset when an operator, eval, or clear key is pressed.
+						else if(btnVal == '.') {
+							if(!decimalAdded) {
+								input.innerHTML += btnVal;
+								decimalAdded = true;
 							}
 						}
 			//if any other key is pressed, just append input
