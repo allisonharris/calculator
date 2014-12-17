@@ -45,8 +45,18 @@ for(var i = 0; i < keys.length; i++) {
 					//Only add operator if input is not empty and there is no operator at the last
 					if(inputVal != '' && operators.indexOf(lastChar) == -1) {
 						input.innerHTML += btnVal;
+
+					//Allow minus if the string is empty
+					else if(inputVal == '' && btnVal == '-')
+						input.innerHTML += btnVal;
 					}
-				}
+					
+					//Replace the last operator (if exists) with the newly pressed operator
+						if(operators.indexOf(lastChar) > -1 {
+							//Here, '.' matches any character while $ donotes the end of string, so anything (will be an operator in this case) at the end of string will get replaced by new operator
+								input.innerHTML = inputVal.replace(/.$/, btnVal);
+							}
+						}
 			//if any other key is pressed, just append input
 			else {
 				input.innerHTML += btnVal;
