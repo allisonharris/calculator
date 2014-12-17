@@ -1,5 +1,6 @@
 //Get all the keys from document
 var keys = document.querySelectorAll('#calculator span');
+var operators = ['+', '-', 'x', '÷'];
 
 //Add onclick event to all the keys and perform operations
 for(var i = 0; i < keys.length; i++) {
@@ -16,7 +17,7 @@ for(var i = 0; i < keys.length; i++) {
 			}
 
 			//If eval key is pressed, calculate and display the result
-			if(btnVal == '=') {
+			else if(btnVal == '=') {
 				var equation = inputVal;
 			}
 
@@ -32,7 +33,20 @@ for(var i = 0; i < keys.length; i++) {
 			//2. The equation shouldn't start from an operator except minus.
 			//3. There should not be more than 1 decimal in a number.
 
-			
+			//I'll fix these issues using some simple checks
+
+			//indexOf only works in IE9+
+			else if(operators.indexOf(btnVal) > -1 {
+
+					//Operator is clicked
+					//Get the last character from the equation
+					var lastChar = inputVal[inputVal.length -1];
+
+					//Only add operator if input is not empty and there is no operator at the last
+					if(inputVal != '' && operators.indexOf(lastChar) == -1) {
+						input.innerHTML += btnVal;
+					}
+				}
 			//if any other key is pressed, just append input
 			else {
 				input.innerHTML += btnVal;
