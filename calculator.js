@@ -15,16 +15,15 @@ for(var i = 0; i < keys.length; i++) {
 			//If clear key is pressed, erase everything
 			if(btnVal == 'C') {
 				input.innerHTML = '';
-			}
+				decimalAdded = false;
 
 			//If eval key is pressed, calculate and display the result
 			else if(btnVal == '=') {
 				var equation = inputVal;
 				var lastChar = equation[equation.length - 1];
-			}
 
-			//Replace all insances of x and ÷ with * and / respectively.  This can be done easily using regex and the 'g' tag which will replace all instances of the matched character/substring
-				equation = equation.replace(/x/g, '*').replace(/÷/g. '/');
+			//Replace all instances of x and ÷ with * and / respectively.  This can be done easily using regex and the 'g' tag which will replace all instances of the matched character/substring
+				equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
 
 				//Final thing left to do is checking the last character of the equation.  If it's an operator or a decimal, remove it.
 				if(operators.indexOf(lastChar) > - 1 || lastChar == '.')
@@ -51,20 +50,20 @@ for(var i = 0; i < keys.length; i++) {
 					var lastChar = inputVal[inputVal.length -1];
 
 					//Only add operator if input is not empty and there is no operator at the last
-					if(inputVal != '' && operators.indexOf(lastChar) == -1) {
+					if(inputVal != '' && operators.indexOf(lastChar) == -1) 
 						input.innerHTML += btnVal;
 
 					//Allow minus if the string is empty
 					else if(inputVal == '' && btnVal == '-')
 						input.innerHTML += btnVal;
-					}
 					
 					//Replace the last operator (if exists) with the newly pressed operator
 						if(operators.indexOf(lastChar) > -1 && inputVal.length > 1 {
-							//Here, '.' matches any character while $ donotes the end of string, so anything (will be an operator in this case) at the end of string will get replaced by new operator
+							//Here, '.' matches any character while $ denotes the end of string, so anything (will be an operator in this case) at the end of string will get replaced by new operator
 								input.innerHTML = inputVal.replace(/.$/, btnVal);
 
 							}
+							decimalAdded = false;
 						}
 
 					//Now only the decimal problem is left.  I can solve this easily using a flag 'decimalAdded' which I'll set once the decimal is added and prevent more decimals to be added once it's set.  It will be reset when an operator, eval, or clear key is pressed.
@@ -74,9 +73,8 @@ for(var i = 0; i < keys.length; i++) {
 								decimalAdded = true;
 							}
 
-							decimalAdded = false;
 						}
-			//if any other key is pressed, just append input
+			//if any other key is pressed, just append it
 			else {
 				input.innerHTML += btnVal;
 			}
